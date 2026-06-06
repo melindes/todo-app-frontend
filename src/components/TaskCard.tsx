@@ -16,11 +16,7 @@ const statusColors = {
     completed   : 'bg-green-100 text-green-800',
 };
 
-const statusLabels = {
-    pending     : 'En attente',
-    in_progress : 'En cours',
-    completed   : 'Terminée',
-};
+
 
 const priorityColors = {
     low    : 'bg-gray-100 text-gray-800',
@@ -28,11 +24,7 @@ const priorityColors = {
     high   : 'bg-red-100 text-red-800',
 };
 
-const priorityLabels = {
-    low    : 'Basse',
-    medium : 'Moyenne',
-    high   : 'Haute',
-};
+
 
 const TaskCard = ({ task, onDelete, onUpdate }: TaskCardProps) => {
     const [isEditing, setIsEditing] = useState(false);

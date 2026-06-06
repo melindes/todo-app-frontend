@@ -7,6 +7,7 @@ export interface User {
 export interface Task {
     id          : number;
     name        : string;
+    name_task  ?: string; 
     description : string;
     status      : TaskStatus;
     priority    : TaskPriority;

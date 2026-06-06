@@ -1,6 +1,5 @@
 import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
-import { useAuth } from '../context/AuthContext';
+
 import useTasks from '../hooks/useTasks';
 import Navbar   from '../components/Navbar';
 import TaskCard from '../components/TaskCard';
@@ -9,11 +8,11 @@ import Alert    from '../components/ui/Alert';
 import Button   from '../components/ui/Button';
 
 const Dashboard = () => {
-    const { user, logout }          = useAuth();
+    
     const { tasks, loading, error,
             createTask, updateTask,
             deleteTask }            = useTasks();
-    const navigate                  = useNavigate();
+   
     const [showForm, setShowForm]   = useState(false);
 
     // Filtrage par statut
@@ -23,10 +22,7 @@ const Dashboard = () => {
         ? tasks
         : tasks.filter(t => t.status === filter);
 
-    const handleLogout = async () => {
-        await logout();
-        navigate('/login');
-    };
+   
 
     return (
         <div className="min-h-screen bg-gray-100">
